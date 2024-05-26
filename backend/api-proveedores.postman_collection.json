@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "496537db-443a-46e1-bcd9-acd6b871dc08",
+		"name": "api-proveedores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35196883"
+	},
+	"item": [
+		{
+			"name": "PUT-proveedores",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Francisco Astudillo Puga\",\n    \"razon_social\": \"Promociones de Mexico\",\n    \"direccion\": \"Dirección de Prueba No.23\",\n    \"estatus\": true\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/proveedor",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-proveedor-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/proveedor/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedor",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-provedor-id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/proveedor/7e70e5ab5a626007cc8c",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedor",
+						"7e70e5ab5a626007cc8c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-proveedor-id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Francisco Astudillo Puga\",\n    \"razon_social\": \"Promociones de Mexico\",\n    \"direccion\": \"Dirección de Prueba No.21\",\n    \"estatus\": true\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/proveedor/7e70e5ab5a626007cc8c",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedor",
+						"7e70e5ab5a626007cc8c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-proveedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/proveedores?inicio=2&limite=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores"
+					],
+					"query": [
+						{
+							"key": "inicio",
+							"value": "2"
+						},
+						{
+							"key": "limite",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
