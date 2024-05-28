@@ -6,25 +6,25 @@ export type Proveedor = {
   fecha: string;
   usuario: string;
 };
-  
-  export const data = [
-    {
-      id:1,
-      nombre: "social medicals",
-      razon_social: "los latinos atacan srl",
-      direccion: 'avenida der los huisaches junto al macdonals ',
-      fecha: '23/05/2005',
-      usuario: 'German'
-    
-    },
-    {
-      id:2,
-      nombre: "social medicals",
-      razon_social: "los latinos atacan srl",
-      direccion: 'avenida der los huisaches junto al macdonals ',
-      fecha: '23/05/2005',
-      usuario: 'German'
-    
+
+export async function datas(): Promise<Proveedor[]> {
+  try {
+    const respuesta = await fetch('http://localhost:8000/proveedor/3');
+
+    if (!respuesta.ok) {
+      throw new Error('Error al obtener los datos de proveedores');
     }
+
+    const result = await respuesta.json();
     
-  ] as Proveedor[];
+  
+    if (result && result.proveedor) {
+      return [result.proveedor] as Proveedor[];
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
